@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Link Assistance",
+  "description": "Link Assistance helps you shorten, expand your url and create a QR code for your url.",
+  "version": "1.0",
+  "content_scripts":[
+      {
+        "css": [ "popup.css" ],
+        "matches":["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+  "browser_action": {
+      "default_icon": "linkicon.png",
+      "default_popup": "popup.html"
+    },
+  "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+  "permissions": [
+      "activeTab",
+      "storage",
+      "https://ajax.googleapis.com/"
+    ]
+}
